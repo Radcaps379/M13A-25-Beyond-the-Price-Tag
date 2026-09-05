@@ -1,0 +1,49 @@
+feature,group,description,leakage_class,used_in
+age,player,Age in years at 1 Jan of the season,ALLOWED,"0,1,2"
+age2,player,Age squared - captures the non-linear value curve (EDA showed a peak near 21 then steep decline),ALLOWED,"0,1,2"
+position,player,Broad position (Attack/Midfield/Defender/Goalkeeper),ALLOWED,"0,1,2"
+height_in_cm,player,Height in cm,ALLOWED,"1,2"
+foot,player,Preferred foot,ALLOWED,"1,2"
+minutes,performance_current,Total league minutes in the season,ALLOWED,"1,2"
+games,performance_current,League appearances in the season,ALLOWED,"1,2"
+goals_per90,performance_current,Goals per 90 minutes,ALLOWED,"1,2"
+assists_per90,performance_current,Assists per 90 minutes,ALLOWED,"1,2"
+goal_contributions_per90,performance_current,Goals + assists per 90 minutes,ALLOWED,"1,2"
+cards_per90,performance_current,Yellow + red cards per 90 minutes,ALLOWED,"1,2"
+minutes_per_game,performance_current,Average minutes per appearance,ALLOWED,"1,2"
+availability,performance_current,Share of available minutes played when appearing,ALLOWED,"1,2"
+prev_minutes,performance_trajectory,minutes in the previous observed season,ALLOWED,"1,2"
+delta_minutes,performance_trajectory,Change in minutes vs previous observed season,ALLOWED,"1,2"
+prev_goals_per90,performance_trajectory,goals_per90 in the previous observed season,ALLOWED,"1,2"
+delta_goals_per90,performance_trajectory,Change in goals_per90 vs previous observed season,ALLOWED,"1,2"
+prev_assists_per90,performance_trajectory,assists_per90 in the previous observed season,ALLOWED,"1,2"
+delta_assists_per90,performance_trajectory,Change in assists_per90 vs previous observed season,ALLOWED,"1,2"
+prev_goal_contributions_per90,performance_trajectory,goal_contributions_per90 in the previous observed season,ALLOWED,"1,2"
+delta_goal_contributions_per90,performance_trajectory,Change in goal_contributions_per90 vs previous observed season,ALLOWED,"1,2"
+roll3_mean_goal_contributions_per90,performance_trajectory,Mean goal_contributions_per90 over up to 3 PRIOR seasons,ALLOWED,"1,2"
+roll3_std_goal_contributions_per90,performance_trajectory,Volatility of goal_contributions_per90 over up to 3 PRIOR seasons (consistency),ALLOWED,"1,2"
+roll3_mean_minutes,performance_trajectory,Mean minutes over up to 3 PRIOR seasons,ALLOWED,"1,2"
+roll3_std_minutes,performance_trajectory,Volatility of minutes over up to 3 PRIOR seasons (consistency),ALLOWED,"1,2"
+seasons_observed,performance_trajectory,Number of prior top-5 seasons observed for this player,ALLOWED,"1,2"
+has_prior_season,performance_trajectory,Indicator: prior-season history exists,ALLOWED,"1,2"
+has_3yr_history,performance_trajectory,Indicator: at least 3 prior seasons observed,ALLOWED,"1,2"
+is_first_observed_season,performance_trajectory,Indicator: first observed season (trajectory features are zero-filled),ALLOWED,"1,2"
+prior_gap_years,performance_trajectory,Seasons elapsed since previous observed season (gap detector),ALLOWED,"1,2"
+young_and_improving,performance_trajectory,Indicator: age<=23 with rising output and rising minutes,ALLOWED,"1,2"
+league,context,Domestic league (EDA: 3.3x median value spread),ALLOWED,"0,1,2"
+season,context,Season start year - absorbs transfer-market inflation (EDA: 2.6x drift),ALLOWED,"0,1,2"
+club_squad_size,club_context,Distinct players used by the club that season. Pre-specified on managerial grounds as a squad-depth / rotation-environment proxy. NOT selected via target-derived residuals.,ALLOWED,"1,2"
+club_mean_age,club_context,"Season-specific club_mean_age. Excluded from the primary specification: no distinct managerial rationale beyond player-level age and minutes, and limited standalone structure in EDA.",ALLOWED (not used),none
+club_total_minutes,club_context,"Season-specific club_total_minutes. Excluded from the primary specification: no distinct managerial rationale beyond player-level age and minutes, and limited standalone structure in EDA.",ALLOWED (not used),none
+squad_size,club_context_snapshot,"squad_size from clubs.csv - describes the club as of the 2026 export, not as of the season. Anachronistic.",EXCLUDED,none
+average_age,club_context_snapshot,"average_age from clubs.csv - describes the club as of the 2026 export, not as of the season. Anachronistic.",EXCLUDED,none
+stadium_seats,club_context_snapshot,"stadium_seats from clubs.csv - describes the club as of the 2026 export, not as of the season. Anachronistic.",EXCLUDED,none
+prior_market_value_eur,market_derived,"Transfermarkt valuation before the season. Legitimate and non-leaking, but market-derived: including it makes the model re-predict the market rather than challenge it.",ROBUSTNESS,2
+transfer_fee_eur,outcome,"Observed transfer fee - a post-decision outcome, and only present for 15.6% of rows (selective subset)",EXCLUDED,none
+transfer_date,outcome,Date of transfer - post-decision,EXCLUDED,none
+market_value_eur,target,Target variable (euros),TARGET,target
+log_market_value,target,Target variable (log euros) - primary target,TARGET,target
+target_value_date,target,Date the target valuation was recorded,EXCLUDED,none
+target_lag_days,target,Days between last match and target valuation - audit column,EXCLUDED,none
+log_prior_market_value,market_derived,Log of prior market value (median-filled where absent),ROBUSTNESS,2
+has_prior_value,market_derived,Indicator: prior market value was observed,ROBUSTNESS,2

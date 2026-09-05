@@ -1,0 +1,23 @@
+# NO LINE-ENDING CONVERSION ON ANALYTICAL ARTIFACTS.
+# An earlier version declared "*.csv text", which makes Git normalise line
+# endings on checkout. On a Windows clone every CSV arrives with CRLF, its bytes
+# differ from what SOURCE_MANIFEST.md hashed, and all 53 checksums fail on a
+# correct repository. Verified by cloning with core.autocrlf=true. These files
+# are byte-exact evidence and must not be rewritten by the transport.
+*.csv -text
+*.json -text
+*.txt -text
+
+# Documents and binaries: never converted.
+*.docx binary
+*.xlsx binary
+*.pptx binary
+*.pdf binary
+*.png binary
+*.zip binary
+
+# Source and prose: LF everywhere, so scripts behave identically on any platform.
+*.py text eol=lf
+*.js text eol=lf
+*.sh text eol=lf
+*.md text eol=lf

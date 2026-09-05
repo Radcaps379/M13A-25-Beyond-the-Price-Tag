@@ -1,0 +1,5 @@
+control,detected
+Synthetic negative control (planted into template text),7/7
+Negative control planted into GPT-authored text,6/6
+Payload provenance: Arm C payload vs canonical,byte-identical
+Validator provenance: md5 vs delivered copy,unchanged

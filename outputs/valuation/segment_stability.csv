@@ -1,0 +1,15 @@
+dimension,segment,n,median_pct_error,R2
+position,Attack,379,37.3,0.768
+position,Defender,569,47.4,0.628
+position,Goalkeeper,114,40.5,0.588
+position,Midfield,446,45.1,0.635
+league,England - Premier League,315,35.1,0.637
+league,France - Ligue 1,267,45.6,0.618
+league,Germany - Bundesliga,271,45.7,0.691
+league,Italy - Serie A,326,42.1,0.589
+league,Spain - LaLiga,329,55.9,0.615
+age_band,<=21,98,52.3,0.104
+age_band,22-24,329,42.0,0.608
+age_band,25-27,417,40.4,0.621
+age_band,28-30,345,45.5,0.607
+age_band,31+,319,46.6,0.569

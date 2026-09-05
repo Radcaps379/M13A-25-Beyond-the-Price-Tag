@@ -1,0 +1,4 @@
+portfolio,n,spend_eur_m,mean_exit_risk_pct,mean_quality_pctl,mean_age,actually_exited_pct
+Risk-aware (recommended),3,48.0,17.1,88.0,20.4,66.7
+Largest valuation gap (rejected objective),3,7.0,49.3,69.0,26.5,33.3
+Cheapest meeting needs,3,3.0,66.4,70.0,35.5,100.0

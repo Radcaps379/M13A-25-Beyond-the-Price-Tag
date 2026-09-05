@@ -1,0 +1,8 @@
+metric,ALL,Attack,Midfield,Defender,Goalkeeper
+minutes,0.268,0.364,0.307,0.266,0.386
+games,0.294,0.232,0.283,0.265,0.386
+goals_per90,0.332,0.445,0.329,0.208,-0.003
+assists_per90,0.322,0.363,0.323,0.182,0.072
+goal_contributions_per90,0.384,0.54,0.385,0.252,0.069
+cards_per90,-0.129,-0.166,-0.172,-0.128,-0.094
+minutes_per_game,0.081,0.344,0.204,0.127,0.135

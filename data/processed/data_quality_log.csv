@@ -1,0 +1,13 @@
+step,rule,rows_before,rows_after,rows_dropped,pct_dropped
+1a,appearances on/before info cutoff 2026-08-26,1894350,1894350,0,0.0
+1b,keep top-5 European leagues only,1894350,726823,1167527,61.63
+1c,keep seasons 2015/16 .. 2024/25,726823,523349,203474,27.99
+1d,require >= 900 league minutes in the season,26493,16045,10448,39.44
+2a,join players.csv on player_id,16045,16045,0,0.0
+2b,require a plausible age (15-45),16045,16040,5,0.03
+2c,require a known position,16040,16035,5,0.03
+3a,join clubs.csv on club_id,16035,16035,0,0.0
+4a,require a post-season market value (the target),16035,15927,108,0.67
+4b,target valuation strictly after last match (lag > 0 days),15927,15925,2,0.01
+5a,"transfers dated after 2026-08-26 excluded (outside information set, not corrupt)",175165,174673,492,0.28
+5b,left-join positive transfer fees (does not drop rows),15925,15925,0,0.0

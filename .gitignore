@@ -1,0 +1,18 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+.DS_Store
+*.log
+.ipynb_checkpoints/
+node_modules/
+
+# credentials must never enter the repository
+.env
+*.key
+*secret*
+*api_key*
+
+# unpacked raw data: the archives under data/raw/ are the committed source
+data/raw/*.csv

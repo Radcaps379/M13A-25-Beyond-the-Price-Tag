@@ -1,0 +1,21 @@
+position,league,seg_unc,n,source
+Attack,England - Premier League,0.3078857294718398,750,position x league
+Attack,France - Ligue 1,0.3226247976462111,664,position x league
+Attack,Germany - Bundesliga,0.32589623877927043,606,position x league
+Attack,Italy - Serie A,0.34577566653080805,645,position x league
+Attack,Spain - LaLiga,0.34966811591248637,794,position x league
+Defender,England - Premier League,0.4052788198102806,1105,position x league
+Defender,France - Ligue 1,0.38987187834862125,1115,position x league
+Defender,Germany - Bundesliga,0.3840340013188308,986,position x league
+Defender,Italy - Serie A,0.45346229632739576,1138,position x league
+Defender,Spain - LaLiga,0.4643392431216351,1151,position x league
+Goalkeeper,England - Premier League,0.42828103012577157,225,position x league
+Goalkeeper,France - Ligue 1,0.4429595250714684,214,position x league
+Goalkeeper,Germany - Bundesliga,0.4061213647761086,187,position x league
+Goalkeeper,Italy - Serie A,0.48458339217188606,220,position x league
+Goalkeeper,Spain - LaLiga,0.4681777965111711,231,position x league
+Midfield,England - Premier League,0.3459498070246896,863,position x league
+Midfield,France - Ligue 1,0.4181479323615811,899,position x league
+Midfield,Germany - Bundesliga,0.35272544575562303,764,position x league
+Midfield,Italy - Serie A,0.4140008288212904,993,position x league
+Midfield,Spain - LaLiga,0.4612220053690028,867,position x league

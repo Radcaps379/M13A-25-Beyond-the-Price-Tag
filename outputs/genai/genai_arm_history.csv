@@ -1,0 +1,5 @@
+arm,generator,payload,validator,independence_from_validator,run,n,passed,numeric_density_per_1000w,failures
+A. Template control,deterministic template (no model),canonical,frozen genai_fidelity_check.py,full - no model involved,single,3,3,91.1,none
+B. Claude conversational,"Claude Opus 4.5, conversational invocation",canonical,frozen genai_fidelity_check.py,NONE - same model family authored the validator,initial,3,1,69.9,"Stassin: 3 fabricated figures (minutes 2,079 vs 1,868; contributions/90 0.606 vs 0.819; uncertainty 0.560 vs 0.074)"
+B. Claude conversational,"Claude Opus 4.5, conversational invocation",canonical,frozen genai_fidelity_check.py,NONE - same model family authored the validator,after correction,3,3,69.9,none; figures re-taken verbatim from the payload
+C. GPT conversational,"GPT, conversational invocation",canonical (verified byte-identical),"frozen genai_fidelity_check.py (md5 049a124a..., unchanged)","PARTIAL - different model family, but GPT had visibility of the check design via the project conversation",initial,3,3,74.3,none on first generation

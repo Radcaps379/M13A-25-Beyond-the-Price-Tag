@@ -1,0 +1,4 @@
+threshold,cut,n_candidates,median_flagged,median_benchmark,differential,meets_min_50,selected
+bottom 10%,-0.7053,74,0.1682,0.1335,0.0347,True,False
+bottom 15%,-0.5626,111,0.1542,0.1335,0.0206,True,False
+bottom 20%,-0.4556,148,0.1757,0.1335,0.0422,True,True

@@ -1,0 +1,37 @@
+key,value,type,source
+player_seasons,"15,925",SOURCE-DIRECT,player_season.csv
+unique_players,"4,961",SOURCE-DIRECT,player_season.csv
+positive_fee_playerseason_pct,15.6,DERIVED,player_season.csv
+positive_fee_records_pct,10.0,DERIVED,canonical_figures.csv (raw archives not unpacked this run)
+model0_r2,0.383,SOURCE-DIRECT,model_results.csv
+model1_r2,0.678,SOURCE-DIRECT,model_results.csv
+model2_r2,0.884,SOURCE-DIRECT,model_results.csv
+model1_median_err,43.9,SOURCE-DIRECT,model_results.csv
+test_n,"1,508",SOURCE-DIRECT,predictions_test.csv
+exit_auc,0.7323,SOURCE-DIRECT,exit_risk_performance.csv
+exit_auc_challenger,0.7283,SOURCE-DIRECT,exit_risk_performance.csv
+decile1_actual,7.3,SOURCE-DIRECT,exit_risk_calibration.csv
+decile10_actual,69.5,SOURCE-DIRECT,exit_risk_calibration.csv
+decile_spread,9.5,DERIVED,exit_risk_calibration.csv
+attrition_flagged,30.1,SOURCE-DIRECT,v2_backtest_audit.csv
+attrition_benchmark,8.2,SOURCE-DIRECT,v2_backtest_audit.csv
+risk_ratio,3.7,DERIVED,derived from v2_backtest_audit.csv
+backtest_p_v1,0.093,SOURCE-DIRECT,v2_signal_comparison.csv
+backtest_p_v2,0.307,SOURCE-DIRECT,v2_signal_comparison.csv
+portfolio_spend_m,48.0,DERIVED,recommended_portfolio.csv
+portfolio_names,"Diego Coppola, Facundo Buonanotte, Lucas Stassin",DERIVED,recommended_portfolio.csv
+portfolio_quality_display_mean,88.3,DISPLAY-DEFINED,"recommended_portfolio.csv - mean of the DISPLAYED per-player percentiles (90, 89, 86). The raw mean is 88.42; the baseline CSV rounds to 88.0. The display mean is canonical because a reader can reproduce it."
+portfolio_exit_risk,17.1,SOURCE-DIRECT,optimizer_baseline_comparison.csv
+stability_stassin,6,DERIVED,optimizer_sensitivity.csv
+stability_coppola,4,DERIVED,optimizer_sensitivity.csv
+stability_buonanotte,3,DERIVED,optimizer_sensitivity.csv
+stability_nebel,2,DERIVED,optimizer_sensitivity.csv
+stability_tchatchoua,2,DERIVED,optimizer_sensitivity.csv
+stability_adli,1,DERIVED,optimizer_sensitivity.csv
+budget_plateau_m,52.0,SOURCE-DIRECT,optimizer_budget_sensitivity.csv
+u21_r2,0.104,SOURCE-DIRECT,segment_stability.csv
+shap_age_share,21.1,SOURCE-DIRECT,shap_family_importance.csv
+genai_armB_initial_passed,1,SOURCE-DIRECT,genai_arm_history.csv
+genai_armC_passed,3,DERIVED,genai_armC_results.csv
+genai_armC_density,74.3,SOURCE-DIRECT,genai_arm_history.csv
+gradient_2024_u21,0.553,SOURCE-DIRECT,robustness_age_gradient.csv

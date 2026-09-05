@@ -1,0 +1,4 @@
+season,split,monotonic_decline,young_band_positive,old_band_negative,spread_young_minus_old,pattern_replicates
+2022,VALIDATION,True,True,True,0.2847,True
+2023,VALIDATION,False,True,True,0.3998,True
+2024,TEST,True,True,True,0.6969,True

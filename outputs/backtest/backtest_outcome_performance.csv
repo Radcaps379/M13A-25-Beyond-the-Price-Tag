@@ -1,0 +1,5 @@
+position,metric,n_flagged,n_benchmark,median_flagged,median_benchmark,difference
+Attack,goal contributions/90,19,223,-0.09,-0.025,-0.065
+Midfield,goal contributions/90,23,287,0.038,0.0,0.038
+Defender,minutes (availability),26,366,-102.0,-26.5,-75.5
+Goalkeeper,minutes (availability),8,71,-45.0,0.0,-45.0

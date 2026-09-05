@@ -1,0 +1,4 @@
+threshold,residual_cut,n_candidates,median_rel_appreciation_flagged,median_rel_appreciation_benchmark,differential,meets_min_50,selected
+bottom 10%,-0.8387,164,0.0448,0.0,0.0448,True,True
+bottom 15%,-0.6793,245,0.0,0.0,0.0,True,False
+bottom 20%,-0.5664,327,0.0,0.0,0.0,True,False

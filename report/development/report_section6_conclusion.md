@@ -1,0 +1,88 @@
+# Section 6 — Conclusion
+### *Beyond the Price Tag* · IIM Ranchi · Sports Analytics (WAI)
+
+---
+
+## 6.1 What this project set out to ask
+
+Football clubs commit substantial capital to the transfer market under conditions of imperfect information. This project asked whether observable performance data could support a defensible valuation framework, and whether the gap between a fundamentals-based valuation and the market's own price could identify recruitment opportunities a club could act on.
+
+That question was treated as a **hypothesis to be tested rather than a premise to be assumed**. The distinction determined the shape of everything that followed.
+
+## 6.2 What the study found
+
+**Observable football fundamentals explain a substantial proportion of market valuation.** A model using age, position, league, current-season performance and performance trajectory achieved R² = 0.678 on a held-out season in the season-normalised framework, against 0.383 for a benchmark using contextual variables alone. Performance data carries real valuation signal.
+
+**A model permitted to observe prior market valuations performs considerably better still** — R² = 0.884 — but its residual is no longer economically interpretable. That contrast produced the project's first substantive insight: predicting the market is easier than explaining it, and the two objectives are not interchangeable. A project optimising for accuracy alone would have selected the wrong model.
+
+**The study did not find sufficient out-of-sample evidence to support the hypothesis that the model-implied valuation residual represents systematically exploitable market mispricing.** Two pre-specified signal definitions were tested under strict time-based discipline, with thresholds fixed on validation data and applied once to the held-out season. Neither produced a statistically significant subsequent appreciation advantage over a matched benchmark (p = 0.094 and p = 0.307 respectively). A promising validation-period differential did not replicate on test.
+
+**However, the analysis revealed that large unexplained valuation gaps were strongly associated with subsequent exit from top-five football**, indicating that disagreement between model and market may contain information about variables not captured in publicly observable performance data. Players flagged by the residual recorded no top-five minutes in the following season at 3.7 times the rate of a matched benchmark — 30.1% against 8.2%, Fisher exact odds ratio 4.82, p = 2.6 × 10⁻¹¹. This relationship was substantially stronger statistical evidence than either appreciation test.
+
+**Investigation of the residual's structure supplied a mechanism.** The residual correlates +0.667 with log market value, and the model's signed errors follow a monotonic age gradient — systematically under-valuing younger players and over-valuing older ones — whose direction replicated across all three seasons examined, though its magnitude varied materially. A discrepancy between model and market is therefore at least as likely to locate a weakness in the model as an error in the market.
+
+**Exit risk itself proved predictable.** A logistic model achieved AUC = 0.732 on the held-out season with strong calibration across the risk distribution, from 7.3% realised exit in the lowest decile to 69.5% in the highest. The interpretable model marginally outperformed a gradient-boosted challenger, so no transparency-for-accuracy trade-off was required.
+
+## 6.3 What was built as a result
+
+The evidence redirected the system's design. The original objective — maximise the gap between model-implied value and acquisition cost — was withdrawn, because maximising a residual that had failed validation would have optimised model error and loaded the portfolio with exit risk.
+
+In its place, a **risk-aware recruitment framework** selects players on position-appropriate quality, development potential and value efficiency, penalised by validated exit risk and model uncertainty, subject to budget, positional, performance-floor, age and confidence constraints. Explanations are separated by question: SHAP accounts for why the model produced a valuation, while the optimizer separately accounts for why a player was selected. A constrained generative layer converts validated outputs into committee-readable briefs, machine-checked for numerical fidelity, unsupported claims, speculative causal inference, decision consistency and uncertainty disclosure.
+
+The interface never labels a player "undervalued." It says *potential valuation discrepancy — investigate*, and where a large gap coincides with high exit risk, it says *treat as a warning*. That wording is not caution for its own sake; it is the most the evidence supports.
+
+## 6.4 What a club should do differently
+
+**Do not treat a valuation gap as a buy signal.** The intuitive heuristic — pursue players whose model-implied value exceeds their price — was tested and not supported. Such gaps are generated by omitted variables and by systematic model error at least as often as by market error.
+
+**Ask quality before value.** The decision sequence should establish that a player is good enough, then how confident the estimate is, then what the exit risk is, and only then whether the price looks favourable. A framework that leads with the valuation gap reproduces the failure this study documented.
+
+**Treat the transfer budget as a portfolio, not a queue.** The relevant question is not which single player is cheapest relative to estimate, but which combination of signings delivers the strongest risk-adjusted profile within budget and positional requirements. Analysis of the model's eligible universe further suggests that relaxing a recruitment constraint can be worth more than increasing the budget — a decision a sporting director can act on directly.
+
+**Apply more human scrutiny where the model is least confident.** The system is weakest for players aged 21 and under, achieving R² of only 0.104 in that segment. Its outputs there warrant proportionally more scouting weight and less analytical weight.
+
+**Use the system to allocate attention, not to make decisions.** Its function is to reduce a league-wide pool to a shortlist worth a scout's time, with an explanation, a risk estimate and an explicit statement of what it cannot see attached to each name.
+
+## 6.5 Contribution
+
+The project's contribution is the transition it documents: **from player valuation to risk-aware recruitment decision support.** That transition was driven by evidence rather than design preference.
+
+Its methodological contribution is the discipline of the test itself. Two pre-specified signal definitions produced null results, and the investigation stopped there rather than iterating until a specification reached significance. The negative result is informative precisely because the procedure that produced it was fixed in advance — and the willingness to accept it is what distinguishes a hypothesis test from a search.
+
+Its managerial contribution is a defensible answer to a question clubs actually face. Not *"which players are undervalued?"* — a question this study suggests public performance data cannot reliably answer — but:
+
+> **Which apparent value opportunities are worth a scout's time, how much confidence should we place in each estimate, and which apparent bargains are more likely to be hidden risk?**
+
+## 6.6 Limitations and future work
+
+### Limitations
+
+**The target is an estimate, not an observed price.** Transfermarkt market value is a community-informed valuation, not a transaction record. The model is therefore calibrated against a construct, and "fair value" throughout this report means model-implied value under that construct.
+
+**Observed transfer fees are sparse and selectively observed.** Only 10.0% of in-scope transfer records carry a positive fee, and 15.6% of player-seasons in the analysis table. The fee-based analysis is a secondary check on a non-representative subset.
+
+**A single test season and one market cycle.** All headline out-of-sample claims rest on 2024/25 with outcomes measured in 2025/26. The residual bias gradient was replicated across three seasons; the back-test was not.
+
+**The optimizer portfolio is illustrative, not validated.** The exit-risk model is validated at population level (n = 1,508). The three-player portfolio is an application of that validated component under declared constraints, with sensitivity analysis showing meaningful but incomplete stability. Realised outcomes for three players cannot establish effectiveness, and no claim of superior transfer returns is made or supported.
+
+**Segment heterogeneity is material.** Median error ranges from 35.1% (England) to 55.9% (Spain), and R² from 0.104 (aged ≤21) to 0.768 (attackers).
+
+**The most likely contents of the residual are unobserved.** Contract length, injury history, tactical role, scouting assessment and player willingness are absent from the data. Section 4.5 suggests this absence is doing real work.
+
+**The generative layer was evaluated under both deterministic and conversational conditions.** The deterministic control passed all three briefs; the initial conversational generation contained three plausible numerical fabrications that were detected by the frozen fidelity validator and subsequently corrected; a second conversational arm using a different model family passed all prescribed checks. The evaluation demonstrates the utility of the generation-and-validation architecture, but comprises nine briefs in total and does not establish general language-model reliability or comparative superiority between models. The cross-model arm carries only partial independence, since the generating model had visibility of the validator design.
+
+### Future work
+
+**Contract and injury data** would test directly whether the residual's association with exit risk is explained by these unobserved variables. This is the single highest-value extension.
+
+**Multi-season back-testing** would establish whether the null mispricing result holds across market cycles, or is specific to this period.
+
+**Segment-specific models** — particularly for players aged 21 and under, where a general model performs poorly — might improve precisely where recruitment value is highest.
+
+**An anchoring-bias event study**, testing whether past transfer fees inflate subsequent valuations after controlling for performance, would examine a specific behavioural mechanism for the persistence documented in Model 2.
+
+**Transfer-market network analysis** would extend the question from player-level mispricing to market structure: whether particular clubs are systematic over- or under-payers.
+
+---
+
+The project began by asking whether artificial intelligence could find undervalued footballers. It ends with a more useful answer than the one it sought: that a valuation model's disagreement with the market is a question to investigate rather than an opportunity to exploit — and that a system honest about what it cannot see is more valuable to a recruitment committee than one that conceals it.

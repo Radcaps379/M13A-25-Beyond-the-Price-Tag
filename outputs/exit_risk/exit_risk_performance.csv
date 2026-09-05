@@ -1,0 +1,5 @@
+model,split,n,AUC,Brier,base_rate
+Logistic (interpretable),VALIDATION,3244,0.7362,0.1932,0.3539
+Logistic (interpretable),TEST,1508,0.7323,0.1861,0.3216
+HistGBC (primary),VALIDATION,3244,0.7252,0.1963,0.3539
+HistGBC (primary),TEST,1508,0.7283,0.1864,0.3216

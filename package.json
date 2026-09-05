@@ -1,0 +1,16 @@
+{
+  "name": "m13a-25-beyond-the-price-tag",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Document and presentation generation for the Beyond the Price Tag project",
+  "scripts": {
+    "build:report": "node code/11_reporting/build_docx.js",
+    "build:logbook": "node code/11_reporting/build_logbook.js",
+    "build:deck": "node code/11_reporting/build_deck_v2.js"
+  },
+  "dependencies": {
+    "docx": "^8.5.0",
+    "pptxgenjs": "^3.12.0"
+  },
+  "engines": { "node": ">=18" }
+}

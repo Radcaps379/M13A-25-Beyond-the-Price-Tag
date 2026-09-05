@@ -1,0 +1,31 @@
+# Python dependencies for the analytical pipeline, dashboard and audit.
+#
+# VERSIONS ARE PINNED, NOT MINIMUMS.
+# An earlier version of this file used >= constraints. A clean install then
+# resolved to scikit-learn 1.9.0, whose HistGradientBoostingRegressor fits
+# differently: Model 1 R2 came out at 0.6803 instead of the reported 0.678, and
+# the under-21 segment R2 at 0.119 instead of 0.104. The repository would have
+# contradicted its own report on any fresh machine. These are the exact versions
+# that produced every figure in the submitted work.
+pandas==3.0.2
+numpy==2.4.4
+scikit-learn==1.8.0
+scipy==1.17.1
+matplotlib==3.10.8
+shap==0.52.0
+pulp==3.3.2
+openpyxl==3.1.5
+python-pptx==1.0.2
+streamlit==1.63.0
+
+# Python 3.12.3 was used throughout.
+#
+# lightgbm is deliberately ABSENT and must not be installed. The scripts import
+# scikit-learn's HistGradientBoosting directly, with no import attempt and no
+# fallback, so the estimator is identical on every machine.
+#
+# PuLP is REQUIRED. The optimizer raises rather than substituting its greedy
+# heuristic, because a missing or non-optimal solver must not silently change
+# the recommended portfolio.
+#
+# Node.js dependencies for document generation are in package.json.

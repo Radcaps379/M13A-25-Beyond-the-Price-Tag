@@ -1,0 +1,63 @@
+file,check,canonical,type,source,status
+report_sections1_2_intro.md,positive_fee_records_pct,10.0,DERIVED,canonical_figures.csv (raw archives not unpacked this run),OK
+report_section3_methodology.md,player_seasons,"15,925",SOURCE-DIRECT,player_season.csv,OK
+report_section3_methodology.md,unique_players,"4,961",SOURCE-DIRECT,player_season.csv,OK
+report_section3_methodology.md,test_n,"1,508",SOURCE-DIRECT,predictions_test.csv,OK
+report_section3_methodology.md,positive_fee_playerseason_pct,15.6,DERIVED,player_season.csv,OK
+report_section3_methodology.md,positive_fee_records_pct,10.0,DERIVED,canonical_figures.csv (raw archives not unpacked this run),OK
+report_section4_results.md,model0_r2,0.383,SOURCE-DIRECT,model_results.csv,OK
+report_section4_results.md,model1_r2,0.678,SOURCE-DIRECT,model_results.csv,OK
+report_section4_results.md,model2_r2,0.884,SOURCE-DIRECT,model_results.csv,OK
+report_section4_results.md,model1_median_err,43.9,SOURCE-DIRECT,model_results.csv,OK
+report_section4_results.md,exit_auc,0.7323,SOURCE-DIRECT,exit_risk_performance.csv,OK
+report_section4_results.md,decile1_actual,7.3,SOURCE-DIRECT,exit_risk_calibration.csv,OK
+report_section4_results.md,decile10_actual,69.5,SOURCE-DIRECT,exit_risk_calibration.csv,OK
+report_section4_results.md,attrition_flagged,30.1,SOURCE-DIRECT,v2_backtest_audit.csv,OK
+report_section4_results.md,attrition_benchmark,8.2,SOURCE-DIRECT,v2_backtest_audit.csv,OK
+report_section4_results.md,risk_ratio,3.7,DERIVED,derived from v2_backtest_audit.csv,OK
+report_section4_results.md,backtest_p_v2,0.307,SOURCE-DIRECT,v2_signal_comparison.csv,OK
+report_section4_results.md,u21_r2,0.104,SOURCE-DIRECT,segment_stability.csv,OK
+report_section4_results.md,portfolio_spend_m,48.0,DERIVED,recommended_portfolio.csv,OK
+report_section4_8_explainability.md,shap_age_share,21.1,SOURCE-DIRECT,shap_family_importance.csv,OK
+report_section4_8_explainability.md,gradient_2024_u21,0.553,SOURCE-DIRECT,robustness_age_gradient.csv,OK
+report_section5_analysis.md,model0_r2,0.383,SOURCE-DIRECT,model_results.csv,OK
+report_section5_analysis.md,model1_r2,0.678,SOURCE-DIRECT,model_results.csv,OK
+report_section5_analysis.md,model2_r2,0.884,SOURCE-DIRECT,model_results.csv,OK
+report_section5_analysis.md,exit_auc,0.7323,SOURCE-DIRECT,exit_risk_performance.csv,OK
+report_section5_analysis.md,portfolio_spend_m,48.0,DERIVED,recommended_portfolio.csv,OK
+report_section5_analysis.md,portfolio_quality_display_mean,88.3,DISPLAY-DEFINED,"recommended_portfolio.csv - mean of the DISPLAYED per-player percentiles (90, 89, 86). The raw mean is 88.42; the baseline CSV rounds to 88.0. The display mean is canonical because a reader can reproduce it.",OK
+report_section5_analysis.md,portfolio_exit_risk,17.1,SOURCE-DIRECT,optimizer_baseline_comparison.csv,OK
+report_section5_analysis.md,budget_plateau_m,52.0,SOURCE-DIRECT,optimizer_budget_sensitivity.csv,OK
+report_section5_analysis.md,u21_r2,0.104,SOURCE-DIRECT,segment_stability.csv,OK
+report_section6_conclusion.md,model0_r2,0.383,SOURCE-DIRECT,model_results.csv,OK
+report_section6_conclusion.md,model1_r2,0.678,SOURCE-DIRECT,model_results.csv,OK
+report_section6_conclusion.md,model2_r2,0.884,SOURCE-DIRECT,model_results.csv,OK
+report_section6_conclusion.md,exit_auc,0.7323,SOURCE-DIRECT,exit_risk_performance.csv,OK
+report_section6_conclusion.md,attrition_flagged,30.1,SOURCE-DIRECT,v2_backtest_audit.csv,OK
+report_section6_conclusion.md,attrition_benchmark,8.2,SOURCE-DIRECT,v2_backtest_audit.csv,OK
+report_section6_conclusion.md,risk_ratio,3.7,DERIVED,derived from v2_backtest_audit.csv,OK
+report_section6_conclusion.md,backtest_p_v2,0.307,SOURCE-DIRECT,v2_signal_comparison.csv,OK
+report_front_matter_SUBMISSION.md,player_seasons,"15,925",SOURCE-DIRECT,player_season.csv,OK
+report_front_matter_SUBMISSION.md,model0_r2,0.383,SOURCE-DIRECT,model_results.csv,OK
+report_front_matter_SUBMISSION.md,model1_r2,0.678,SOURCE-DIRECT,model_results.csv,OK
+report_front_matter_SUBMISSION.md,exit_auc,0.7323,SOURCE-DIRECT,exit_risk_performance.csv,OK
+report_front_matter_SUBMISSION.md,risk_ratio,3.7,DERIVED,derived from v2_backtest_audit.csv,OK
+demo_video_script.md,player_seasons,"15,925",SOURCE-DIRECT,player_season.csv,OK
+demo_video_script.md,model0_r2,0.383,SOURCE-DIRECT,model_results.csv,OK
+demo_video_script.md,model1_r2,0.678,SOURCE-DIRECT,model_results.csv,OK
+demo_video_script.md,model2_r2,0.884,SOURCE-DIRECT,model_results.csv,OK
+demo_video_script.md,exit_auc,0.7323,SOURCE-DIRECT,exit_risk_performance.csv,OK
+demo_video_script.md,attrition_flagged,30.1,SOURCE-DIRECT,v2_backtest_audit.csv,OK
+demo_video_script.md,attrition_benchmark,8.2,SOURCE-DIRECT,v2_backtest_audit.csv,OK
+demo_video_script.md,risk_ratio,3.7,DERIVED,derived from v2_backtest_audit.csv,OK
+demo_video_script.md,decile1_actual,7.3,SOURCE-DIRECT,exit_risk_calibration.csv,OK
+demo_video_script.md,decile10_actual,69.5,SOURCE-DIRECT,exit_risk_calibration.csv,OK
+demo_video_script.md,portfolio_spend_m,48.0,DERIVED,recommended_portfolio.csv,OK
+demo_video_script.md,portfolio_quality_display_mean,88.3,DISPLAY-DEFINED,"recommended_portfolio.csv - mean of the DISPLAYED per-player percentiles (90, 89, 86). The raw mean is 88.42; the baseline CSV rounds to 88.0. The display mean is canonical because a reader can reproduce it.",OK
+demo_video_script.md,portfolio_exit_risk,17.1,SOURCE-DIRECT,optimizer_baseline_comparison.csv,OK
+optimizer_specification.md,attrition_flagged,30.1,SOURCE-DIRECT,v2_backtest_audit.csv,OK
+optimizer_specification.md,attrition_benchmark,8.2,SOURCE-DIRECT,v2_backtest_audit.csv,OK
+optimizer_specification.md,backtest_p_v2,0.307,SOURCE-DIRECT,v2_signal_comparison.csv,OK
+report_section7_9_genai.md,genai_armB_initial_passed,1,SOURCE-DIRECT,genai_arm_history.csv,OK
+report_section7_9_genai.md,genai_armC_passed,3,DERIVED,genai_armC_results.csv,OK
+report_section7_9_genai.md,genai_armC_density,74.3,SOURCE-DIRECT,genai_arm_history.csv,OK

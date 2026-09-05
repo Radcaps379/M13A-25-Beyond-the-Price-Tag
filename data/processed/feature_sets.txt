@@ -1,0 +1,8 @@
+MODEL 0 (market context):
+  age, age2, position, league, season
+
+MODEL 1 (PRIMARY - context + performance + trajectory):
+  age, age2, position, league, season, height_in_cm, foot, minutes, games, goals_per90, assists_per90, goal_contributions_per90, cards_per90, minutes_per_game, availability, prev_minutes, prev_goals_per90, prev_assists_per90, prev_goal_contributions_per90, delta_minutes, delta_goals_per90, delta_assists_per90, delta_goal_contributions_per90, roll3_mean_goal_contributions_per90, roll3_mean_minutes, roll3_std_goal_contributions_per90, roll3_std_minutes, seasons_observed, has_prior_season, has_3yr_history, is_first_observed_season, prior_gap_years, young_and_improving, club_squad_size
+
+MODEL 2 (robustness - Model 1 + prior market value):
+  age, age2, position, league, season, height_in_cm, foot, minutes, games, goals_per90, assists_per90, goal_contributions_per90, cards_per90, minutes_per_game, availability, prev_minutes, prev_goals_per90, prev_assists_per90, prev_goal_contributions_per90, delta_minutes, delta_goals_per90, delta_assists_per90, delta_goal_contributions_per90, roll3_mean_goal_contributions_per90, roll3_mean_minutes, roll3_std_goal_contributions_per90, roll3_std_minutes, seasons_observed, has_prior_season, has_3yr_history, is_first_observed_season, prior_gap_years, young_and_improving, club_squad_size, log_prior_market_value, has_prior_value

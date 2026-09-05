@@ -1,0 +1,4 @@
+variable,in_primary_specification,selection_basis,train_period_partial_corr,note
+club_squad_size,True,a priori managerial rationale,-0.1613,diagnostic only - NOT used to select features
+club_mean_age,False,a priori managerial rationale,-0.0756,diagnostic only - NOT used to select features
+club_total_minutes,False,a priori managerial rationale,0.0237,diagnostic only - NOT used to select features

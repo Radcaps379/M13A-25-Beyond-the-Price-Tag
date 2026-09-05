@@ -1,0 +1,4 @@
+group,n,median_rel_appreciation,ci95_low,ci95_high,pct_positive
+Flagged (refined),128.0,0.1542,0.073,0.2231,61.7
+Eligible benchmark,591.0,0.1542,0.1123,0.1823,64.5
+Difference,,0.0,,,-2.7
